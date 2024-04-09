@@ -4,10 +4,12 @@ import { apiSlice } from "./apiSlice";
 export const productsApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getProducts: builder.query({
-      query: ({keyword}) => ({
+      query: ({page,limit,keyword}) => ({
         url: PRODUCTS_URL,
         params: {
-          keyword
+          page,
+          limit,
+          keyword,
         },
       }),
       keepUnusedDataFor: 5,
