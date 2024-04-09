@@ -12,7 +12,7 @@ function HomeScreen() {
 
   // Get the values of 'page' and 'limit' from the query parameters
   const page = queryParams.get("page") || 1;
-  const limit = 8;
+  const limit = 5;
   const { data, isLoading, error } = useGetProductsQuery({
     page,
     limit,
@@ -31,7 +31,7 @@ function HomeScreen() {
         <Error />
       ) : (
         <div>
-          <div className=" grid gap-3 grid-cols-2 my-5 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 md:grid-cols-3 md:gap-x-5 md:gap-y-3 lg:gap-x-5 lg:gap-y-8">
+          <div className=" grid gap-3 grid-cols-1 my-5 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 md:grid-cols-3 md:gap-x-5 md:gap-y-3 lg:gap-x-5 lg:gap-y-8">
             {products.map((product, index) => (
               <ProductCard
                 key={index}

@@ -43,16 +43,16 @@ function LoginScreen() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if(email==="" || password===""){
-      toast.error("Please enter your email");
       return;
     }
     try {
       const res = await login({ email, password }).unwrap();
+      console.log(res);
       dispatch(setCredentials({ ...res }));
+      console.log(redirect);
       navigate(redirect);
     } catch (error) {
-      toast.error(error)
-      // toast.error(error?.data?.message || error.error);
+      toast.error(error.message || "Your credientials are wrong");
     }
   };
 
