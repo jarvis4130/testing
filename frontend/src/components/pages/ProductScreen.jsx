@@ -42,12 +42,12 @@ function ProductScreen() {
       productId: product._id,
       brand: product.brandName,
       quantity: 1,
-      unitPrice: product.priceAfterDiscount,
-      totalPrice: product.priceAfterDiscount * 1,
+      unitPrice: product.bookingPrice,
+      totalPrice: product.bookingPrice * 1,
       img: product.images[0],
       stock: product.countInStock,
     };
-    // console.log(newItem);
+    console.log(newItem);
     dispatch(addItem(newItem));
   };
 
@@ -111,7 +111,7 @@ function ProductScreen() {
                   </span>
                 </div>
                 <div>
-                  <span className="">Flat: {product.discountPercentage}%</span>
+                  <span className="">Booking Price: {product.bookingPrice}</span>
                 </div>
               </div>
 

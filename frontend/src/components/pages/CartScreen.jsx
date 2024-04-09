@@ -19,6 +19,8 @@ function Cart() {
 
   if (!cart.length) return <EmptyCart />;
 
+  console.log(cart)
+
   const handleSubmit = async () => {
     // 1)Get Checkout Session From API
     const stripe = await loadStripe(STRIPE_API_KEY);
@@ -48,7 +50,6 @@ function Cart() {
       <h2 className="mt-7 text-xl font-semibold">
         Your cart, {userInfo?.data?.user?.name}
       </h2>
-
       <div className="mt-3 flex flex-col divide-y divide-stone-200 border-b">
         {cart.map((item) => (
           <CartItem item={item} key={item.productId} />

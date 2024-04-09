@@ -83,6 +83,10 @@ productSchema.virtual("discountPercentage").get(function () {
   return Math.floor(((this.mrp - this.priceAfterDiscount) / this.mrp) * 100);
 });
 
+productSchema.virtual("bookingPrice").get(function () {
+  return Math.floor(((this.priceAfterDiscount) * 10)/100);
+});
+
 // virtual populate
 productSchema.virtual("reviews", {
   ref: "Review",
