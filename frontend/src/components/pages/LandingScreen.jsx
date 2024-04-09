@@ -11,7 +11,7 @@ function LandingScreen() {
           alt="Logo.png"
           onClick={() => navigate("/app")}
         />
-        <h1 className="text-3xl my-2">Welcome To A2Z</h1>
+        <h1 className="text-3xl my-2">Welcome To A2Z Housing</h1>
       </div>
       <div className="flex flex-col justify-center items-center">
         <div className="m-4">
