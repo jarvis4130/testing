@@ -8,14 +8,14 @@ import Pagination from "../ui/Pagination";
 function HomeScreen() {
   const { keyword } = useParams();
 
-  const queryParams = new URLSearchParams(location.search);
+  // const queryParams = new URLSearchParams(location.search);
 
   // Get the values of 'page' and 'limit' from the query parameters
-  const page = queryParams.get("page") || 1;
-  const limit = 8;
+  // const page = queryParams.get("page") || 1;
+  // const limit = 8;
   const { data, isLoading, error } = useGetProductsQuery({
-    page,
-    limit,
+    // page,
+    // limit,
     keyword,
   });
   const navigate = useNavigate();
